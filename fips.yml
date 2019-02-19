@@ -3,5 +3,5 @@
 #
 ---
 exports:
-    header-dirs : [ 'include'  ]
+    header-dirs : [ 'include', 'example/nlohmann_json', 'example'  ]
 
