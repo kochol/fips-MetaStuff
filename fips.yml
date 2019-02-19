@@ -1,0 +1,7 @@
+#
+# fips-MetaStuff
+#
+---
+exports:
+    header-dirs : [ 'include'  ]
+
