@@ -99,13 +99,13 @@ void deserialize(Class& obj, const json& object)
                     } else if (member.canGetRef()) {
                         member.getRef(obj) = objName.template get<MemberT>();
                     } else {
-                        throw std::runtime_error("Error: can't deserialize member because it's read only");
+                        assert(false); // ("Error: can't deserialize member because it's read only");
                     }
                 }
             }
         );
     } else {
-        throw std::runtime_error("Error: can't deserialize from Json::json to Class.");
+        assert(false); //("Error: can't deserialize from Json::json to Class.");
     }
 }
 
