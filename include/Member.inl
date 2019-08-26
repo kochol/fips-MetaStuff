@@ -55,6 +55,7 @@ const T& Member<Class, T>::get(const Class& obj) const
         return obj.*ptr;
     }
     assert(false); //("Cannot return const ref to member: no getter or member pointer set");
+    return obj.*ptr;
 }
 
 template <typename Class, typename T>
@@ -68,6 +69,7 @@ T Member<Class, T>::getCopy(const Class& obj) const
         return obj.*ptr;
     }
     assert(false); // ("Cannot return copy of member: no getter or member pointer set");
+    return obj.*ptr;
 }
 
 template <typename Class, typename T>
@@ -79,6 +81,7 @@ T& Member<Class, T>::getRef(Class& obj) const
         return obj.*ptr;
     }
     assert(false); // ("Cannot return ref to member: no getter or member pointer set");
+    return obj.*ptr;
 }
 
 template <typename Class, typename T>
@@ -86,7 +89,8 @@ member_ptr_t<Class, T> Member<Class, T>::getPtr() const {
     if (hasPtr()) {
         return ptr;
     }
-    throw std::runtime_error("Cannot get pointer to member: it wasn't set");
+    asesrt(false);// ("Cannot get pointer to member: it wasn't set");
+    return ptr;
 }
 
 template<typename Class, typename T>
