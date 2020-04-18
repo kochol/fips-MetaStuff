@@ -89,7 +89,7 @@ member_ptr_t<Class, T> Member<Class, T>::getPtr() const {
     if (hasPtr()) {
         return ptr;
     }
-    asesrt(false);// ("Cannot get pointer to member: it wasn't set");
+    assert(false);// ("Cannot get pointer to member: it wasn't set");
     return ptr;
 }
 
